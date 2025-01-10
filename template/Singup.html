@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Signup</title>
+</head>
+<body>
+    <main class="bg-[url('https://images.unsplash.com/photo-1513346940221-6f673d962e97?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-center min-h-screen bg-white opacity-90">
+
+        <div class="flex items-center justify-center min-h-screen">
+            <div class="bg-white bg-opacity-20 p-8 rounded-lg shadow-lg max-w-md w-full">
+                <h2 class="text-2xl font-bold mb-6 text-center">Sign Up</h2>
+                {% if message %}
+                    <p class="text-red-700 text-center bg-yellow-500">{{ message }}</p>
+                {% endif %}
+                <form method="post" action="">
+                    {% csrf_token %}
+                    <div class="mb-4">
+                        <label for="username" class="block text-gray-900 font-bold mb-2">Username</label>
+                        <input type="text" id="username" name="username" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+                    <div class="mb-4">
+                        <label for="password" class="block text-gray-900 font-bold mb-2">Password</label>
+                        <input type="password" id="password" name="password" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+                    <div class="mb-6">
+                        <label for="confirm-password" class="block text-gray-900 font-bold mb-2">Confirm Password</label>
+                        <input type="password" id="confirm-password" name="confirm-password" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <button type="submit" class="bg-blue-700 hover:bg-blue-400 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Submit</button>
+                        <button type="submit" class="bg-red-900 hover:bg-red-400 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"><a href="/">Login</a></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </main>
+</body>
+</html>
